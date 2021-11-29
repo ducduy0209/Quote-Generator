@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Generator</title>
+    <link rel="shortcut icon" href="https://e7.pngegg.com/pngimages/554/342/png-clipart-computer-icons-quotation-desktop-quote-text-trademark.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="quote-text">
+            <i class="fas fa-quote-left"></i>
+            <span class="quote"></span>
+        </div>
+
+        <div class="quote-author">
+            <span class="author"></span>
+        </div>
+
+        <div class="buttons">
+            <button class="twitter-btn">
+                <i class="fab fa-twitter"></i>
+            </button>
+            <button class="new-quote">New Quote</button>
+        </div>
+    </div>
+
+    <!-- Loader -->
+    <div class="lds-ring" id="loader">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+
+</html>
