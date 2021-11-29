@@ -20,7 +20,7 @@ const HideLoading = () => {
 
 
 // get Quote form API
-async function getQuote() {
+async function getQuoteFromAPI() {
     showLoading();
     const apiUrl = 'https://type.fit/api/quotes';
     try {
@@ -33,8 +33,8 @@ async function getQuote() {
 
 // Random a new quote
 async function newQuote() {
-    const quoteArr = await getQuote();
-    const quote = quoteArr[Math.floor(Math.random() * quoteArr.length)];
+    const quoteData = await getQuoteFromAPI();
+    const quote = quoteData[Math.floor(Math.random() * quoteData.length)];
     // Check name author
     if (!quote.author) {
         authorText.innerText = '- Incognito -';
@@ -49,6 +49,7 @@ async function newQuote() {
         quoteText.classList.remove('long-quote');
     }
 
+    // Inner text and hide loader
     quoteText.innerText = quote.text;
     HideLoading();
 }
@@ -59,8 +60,10 @@ const tweetQuote = () => {
     window.open(twitterUrl, '_blank');
 }
 
+// On load, default a quote
 newQuote();
 
+// Click new quote button
 newQuoteBtn.addEventListener('click', () => {
     showLoading();
     setTimeout(() => {
@@ -68,4 +71,5 @@ newQuoteBtn.addEventListener('click', () => {
     }, 260);
 });
 
+// Click icon twitter button
 twitterBtn.addEventListener('click', tweetQuote);
